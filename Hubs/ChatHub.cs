@@ -12,5 +12,10 @@ namespace Demo_SignalR_Chat.Hubs
         {
             await Clients.All.SendAsync("ReceiveMessage", user, message);
         }
+
+        public async Task GetNotification()
+        {
+            await Clients.Others.SendAsync("CountMessage");
+        }
     }
 }
